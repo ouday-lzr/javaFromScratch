@@ -5,6 +5,7 @@
  */
 package com.mycompany.testproject1;
 
+
 import javax.swing.JOptionPane;
 
 /**
@@ -14,21 +15,35 @@ import javax.swing.JOptionPane;
 public class Main {   
     
     public static void main(String[] args) {
-        String firstNum ;
-        String secondNum;
-        int num1;
-        int num2;
-        int sum;
         
-        firstNum = JOptionPane.showInputDialog("Enter the first number");
+        String coeff1 ;
+        String coeff2 ;
+        String coeff3 ;
+        double num1;
+        double num2;
+        double num3;
         
-        secondNum = JOptionPane.showInputDialog("Enter the second number");
+       
         
-        num1 = Integer.parseInt(firstNum);
-        num2 = Integer.parseInt(secondNum);
         
-        sum = num1 + num2 ;
+        coeff1 = JOptionPane.showInputDialog("Enter the coeff 1 ");
         
-        JOptionPane.showMessageDialog(null, "Result :" + sum);
+        coeff2 = JOptionPane.showInputDialog("Enter the coeff 2 ");
+        
+        coeff3 = JOptionPane.showInputDialog("Enter the coeff 3 ");
+        
+        num1 = Integer.parseInt(coeff1);
+        num2 = Integer.parseInt(coeff2);
+        num3 = Integer.parseInt(coeff3);
+        
+        Equation Eq = new Equation(num1 , num2, num3);
+        
+        Eq.resolution();
+        
+        //sum = num1 + num2 ;
+        
+        //System.out.println("Delta 1 :" + Eq.getRacine1());
+        JOptionPane.showMessageDialog(null, "Delta 1 :" + Eq.getRacine1());
+        JOptionPane.showMessageDialog(null, "Delta 2 :" + Eq.getRacine2());
     } 
 }
